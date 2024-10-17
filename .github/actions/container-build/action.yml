@@ -30,7 +30,7 @@ runs:
 
     - name: イメージのビルド
       run: |
-        docker build -t ${{ steps.meta.outputs.tags }} -f ./docker/ecs/Dockerfile ./docker/ecs
+        docker build -t ${{ steps.meta.outputs.tags }} -f ${{ inputs.dockerfile-path }} ./docker/ecs
       shell: bash
 
     - name: ECRにイメージをプッシュ
